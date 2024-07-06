@@ -1,0 +1,2 @@
+opportunity: Cơ hội
+stuck: gặp khó khăn
