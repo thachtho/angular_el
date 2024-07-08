@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '@libs/components/header/header.component';
+import { AuthService } from '@pages/auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +21,13 @@ import { HeaderComponent } from '@libs/components/header/header.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'App demo';
+  isLogin = false;
 
-  handleClick() {
-    alert(123)
+  constructor(private authService: AuthService) {}
+
+  async ngOnInit(): Promise<void> {
+    this.authService.isLoggedIn$.subscribe((loggedIn: boolean) => {
+      this.isLogin = loggedIn;
+    });
   }
 }

@@ -1,7 +1,10 @@
-<div class="grid grid-cols-2 grid-rows-2 gap-2 w-100">
-    @for (item of screens; track item.id) {
-        <div (click)="navigateScreen(item.id)" class="bg-blue-500 w-64 h-64 cursor-pointer flex justify-center items-center">{{ item.name }}</div>
-        } @empty {
-        <li>...</li>
-    }
+<div class="flex items-center justify-center">
+    <div class="grid grid-cols-2 grid-rows-2 gap-2 w-100 my-2">
+        @for (item of screens; track item.id) {
+            <div (click)="navigateScreen(item.path)" class="bg-blue-500 w-64 h-64 cursor-pointer flex justify-center items-center">{{ item.name }}</div>
+            } @empty {
+            <li>...</li>
+        }
+    </div>
 </div>
+
