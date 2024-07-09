@@ -20,14 +20,4 @@ import { AuthService } from '@pages/auth/services/auth.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  isLogin = false;
-
-  constructor(private authService: AuthService) {}
-
-  async ngOnInit(): Promise<void> {
-    this.authService.isLoggedIn$.subscribe((loggedIn: boolean) => {
-      this.isLogin = loggedIn;
-    });
-  }
-}
+export class AppComponent {}

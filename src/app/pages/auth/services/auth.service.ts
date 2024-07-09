@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import LOCAL_STORAGE_KEY from "@libs/enum/local-storage";
 import { LocalStorageService } from "@libs/services/local-storage.service";
 import { BehaviorSubject } from "rxjs";
 
@@ -9,7 +10,7 @@ export class AuthService {
     constructor(
         private localStorageService: LocalStorageService, 
     ) {
-        const isLoggedIn = this.localStorageService.getItem('isLogin');
+        const isLoggedIn = this.localStorageService.getItem(LOCAL_STORAGE_KEY.IS_LOGIN);
 
         if (isLoggedIn === '1') {
             this.isLoggedInSubject.next(true);

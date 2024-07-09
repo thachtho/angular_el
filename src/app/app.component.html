@@ -1,12 +1,1 @@
-<div class="container" *ngIf="isLogin; else loginTemplate">
-    <div>
-        <app-header></app-header>
-        <div class="mt-2 rounded">
-            <router-outlet />      
-        </div>
-    </div>
-</div>
-<ng-template #loginTemplate>
-    <router-outlet></router-outlet>
-</ng-template>     
-
+<router-outlet />
