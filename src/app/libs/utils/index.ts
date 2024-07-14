@@ -5,4 +5,4 @@ const isUrlLogin = (state: RouterStateSnapshot) => state.url === `/${ROUTER.LOGI
 
 export {
     isUrlLogin
-}
+};

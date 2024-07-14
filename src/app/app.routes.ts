@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
+import { authGuard } from '@core/guard/auth.guard';
+import { loginGuard } from '@core/guard/login.guard';
 import { ROUTER } from '@libs/enum/router';
-import { authGuard } from '@libs/services/guard/auth.guard';
-import { loginGuard } from '@libs/services/guard/login.guard';
 
 export const routes: Routes = [
     {

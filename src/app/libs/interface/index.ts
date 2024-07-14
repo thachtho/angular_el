@@ -1,19 +1,19 @@
-interface IPropsDropdown {
+export interface IPropsDropdown {
     label: string | number;
     value: string | number;
   }
   
-  interface ILogin {
+ export interface ILogin {
     nickname: string;
     password: string;
   }
   
-  interface IBaseSize {
+ export interface IBaseSize {
     width?: number;
     height?: number;
   }
   
-  interface IBase {
+ export interface IBase {
     id: number;
     deletedAt: Date;
     createdAt: Date;
@@ -21,13 +21,13 @@ interface IPropsDropdown {
     createdBy: number;
   }
   
-  interface IControl extends IBase {
+ export interface IControl extends IBase {
     path: string;
     name: string;
     controlChildrens: IControl[];
   }
   
-  interface IUser extends IBase {
+ export interface IUser extends IBase {
     fullname: string | null;
     nickname: string;
     password?: string;
@@ -35,7 +35,7 @@ interface IPropsDropdown {
     agencyId: number;
   }
   
-  interface IClass extends IBase {
+ export interface IClass extends IBase {
     name: string;
     teacherId: number;
     courseId: number;
@@ -45,43 +45,43 @@ interface IPropsDropdown {
     teacher: IUser;
   }
   
-  interface IClassToStudent extends IBase {
+ export interface IClassToStudent extends IBase {
     classId: number;
     userId: number;
     user: IUser;
     class: IClass;
   }
   
-  interface ICourse extends IBase {
+ export interface ICourse extends IBase {
     from: number;
     to: number;
     courseName: string;
     classList: IClass[];
   }
   
-  interface IUnit extends IBase {
+ export interface IUnit extends IBase {
     name: string;
     studyProgramId: number;
     lessons: ILesson[];
   }
   
-  interface ILesson extends IBase {
+ export interface ILesson extends IBase {
     name: string;
     unitId: number;
     variables: IVariable[];
   }
   
-  interface IStudyProgram extends IBase {
+ export interface IStudyProgram extends IBase {
     name: string;
     blockId: number;
   }
   
-  interface IStudyProgram extends IBase {
+ export interface IStudyProgram extends IBase {
     name: string;
     blockId: number;
   }
   
-  interface IClassManagerLesson {
+ export interface IClassManagerLesson {
     id: number;
     classManagerId: number;
     lessonId: number;
@@ -90,14 +90,14 @@ interface IPropsDropdown {
     numberRepeat: number;
   }
   
-  interface IClassManager extends IBase {
+ export interface IClassManager extends IBase {
     classId: number;
     unitId: number;
     unit: IUnit;
     classManagerLessons: IClassManagerLesson[];
   }
   
-  interface IClassStudent {
+ export interface IClassStudent {
     id: number;
     classId: number;
     userId: number;
@@ -105,22 +105,23 @@ interface IPropsDropdown {
     user: IUser;
   }
   
-  interface IVariable extends IBase {
+ export interface IVariable extends IBase {
     name: string;
     vi: string;
     lessonId: number;
   }
   
-  interface IExercise extends IBase {
+ export interface IExercise extends IBase {
     userId: number;
     classManagerLessonId: number;
     exerciseVariables?: IExerciseVariable[];
   }
   
-  interface IExerciseVariable {
+ export interface IExerciseVariable {
     id: number;
     exerciseId: number;
     variableId: number;
     count: number;
     variable: IVariable;
   }
+  

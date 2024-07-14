@@ -1,8 +1,6 @@
 import { Component } from "@angular/core";
-import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
-import { LocalStorageService } from "@libs/services/local-storage.service";
-import LOCAL_STORAGE_KEY from "@libs/enum/local-storage";
+import { AuthService } from "@core/services/auth.service";
 
 @Component({
     selector: 'app-login',
@@ -16,13 +14,14 @@ export class LoginComponent {
 
     constructor(
         private authService: AuthService, 
-        private localStorageService: LocalStorageService, 
-        private router: Router
+        private router: Router,
     ) {}
 
     login() {
-        this.authService.login()
-        this.localStorageService.setItem(LOCAL_STORAGE_KEY.IS_LOGIN, '1')
-        this.router.navigate([`/`]);
+        this.authService.login().subscribe({
+            next: (res) => {
+              this.router.navigate([`/`]);
+            },
+        });
     }
 }

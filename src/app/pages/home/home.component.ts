@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ){}
+
   screens = [
     { id: 1, name: 'A', path: 'class' },
     { id: 2, name: 'B', path: 'user' },

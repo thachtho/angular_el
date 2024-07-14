@@ -1,5 +1,5 @@
 enum LOCAL_STORAGE_KEY {
-    IS_LOGIN = 'isLogin'
+    USER_LOGIN = 'userLogin'
 }
 
 export default LOCAL_STORAGE_KEY

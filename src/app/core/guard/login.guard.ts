@@ -4,9 +4,9 @@ import LOCAL_STORAGE_KEY from '@libs/enum/local-storage';
 import { isUrlLogin } from '@libs/utils';
 
 export const loginGuard: CanActivateFn = (route, state) => {
-  const isLogin = localStorage.getItem(LOCAL_STORAGE_KEY.IS_LOGIN)
+  const isLogin = localStorage.getItem(LOCAL_STORAGE_KEY.USER_LOGIN)
 
-  if (isLogin == '1') {
+  if (isLogin) {
     if (isUrlLogin(state)) {
       inject(Router).navigate(['/']);
     }

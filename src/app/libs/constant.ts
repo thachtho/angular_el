@@ -1,4 +1,4 @@
-const BASE_URL_SERVER = 'https://httpbin.dev'
+const BASE_URL_SERVER = 'http://localhost:3000/api'
 const IS_LOGIN = true
 
 export {
